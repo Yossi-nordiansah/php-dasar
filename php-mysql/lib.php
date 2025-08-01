@@ -1,13 +1,11 @@
-<?php 
-$conn = mysqli_connect("localhost", "root", "", "belajarphpdasar", 3308);
-
-function query($query){
+<?php
+function query($query)
+{
     global $conn;
     $result = mysqli_query($conn, $query);
     $rows = [];
-    while ($row = mysqli_fetch_assoc($result)){
+    while ($row = mysqli_fetch_assoc($result)) {
         $rows[] = $row;
     }
     return $rows;
 }
-?>
