@@ -10,7 +10,7 @@ if (isset($_POST["submit"])) {
         </script>
         ";
     } else {
-            echo "
+        echo "
         <script>
             alert('data Gagal ditambahkan')
             document.location.href = 'index.php'

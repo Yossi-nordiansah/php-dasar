@@ -27,21 +27,21 @@ $mahasiswa = query("SELECT * FROM mahasiswa")
             <th>Jurusan</th>
         </tr>
         <?php $i = 1 ?>
-        <?php foreach($mahasiswa as $row) : ?>
-        <tr>
-            <td><?= $i ?></td>
-            <td>
-                <a href="">Hapus</a>
-                |
-                <a href="">Ubah</a>
-            </td>
-            <td><img src="<?= $row["gambar"]; ?> " alt="foto mahasiswa" style="width: 50px; display: block; margin: auto;"></td>
-            <td><?= $row["nim"]; ?></td>
-            <td><?= $row["nama"]; ?></td>
-            <td><?= $row["email"]; ?></td>
-            <td><?= $row["jurusan"]; ?></td>
-        </tr>
-        <?php $i++; ?>
+        <?php foreach ($mahasiswa as $row) : ?>
+            <tr>
+                <td><?= $i ?></td>
+                <td>
+                    <a href="hapus.php?id=<?= $row["id"]; ?>" onclick="return confirm('yakin?');">Hapus</a>
+                    |
+                    <a href="">Ubah</a>
+                </td>
+                <td><img src="<?= $row["gambar"]; ?> " alt="foto mahasiswa" style="width: 50px; display: block; margin: auto;"></td>
+                <td><?= $row["nim"]; ?></td>
+                <td><?= $row["nama"]; ?></td>
+                <td><?= $row["email"]; ?></td>
+                <td><?= $row["jurusan"]; ?></td>
+            </tr>
+            <?php $i++; ?>
         <?php endforeach; ?>
     </table>
 </body>
