@@ -1,11 +1,17 @@
 <?php
+session_start();
+if (!isset($_SESSION["login"])) {
+    header("Location: login.php");
+    exit;
+}
+
 require "lib.php";
 if (isset($_POST["submit"])) {
     if (tambahMahasiswa($_POST) > 0) {
         echo "
         <script>
             alert('data berhasil ditambahkan')
-            //document.location.href = 'index.php'
+            document.location.href = 'index.php'
         </script>
         ";
     } else {
