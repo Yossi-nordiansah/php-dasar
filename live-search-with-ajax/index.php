@@ -26,14 +26,21 @@ if (isset($_POST["cari"])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>admin</title>
+    <style>
+        @media print {
+            .logout, .tambah, .form-cari {
+                display: none;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <a href="logout.php">Logout</a>
+    <a href="logout.php" class="logout">Logout</a>
     <h2>Daftar Mahasiswa</h2>
-    <a href="tambah-mahasiswa.php">Tambah Mahasiswa Baru</a>
+    <a href="tambah-mahasiswa.php" class="tambah">Tambah Mahasiswa Baru</a>
     <br>
-    <form action="" method="post">
+    <form action="" method="post" class="form-cari">
         <input type="text" name="keyword" id="keyword" placeholder="masukkan kata kunci.." size="40" autofocus>
         <button type="submit" name="cari" id='search-button'>cari</button>
     </form>
